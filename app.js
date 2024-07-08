@@ -1,6 +1,6 @@
 import bodyParser from "body-parser";
 import express from "express";
-import connectDb from "./models/products.model.js";
+import {connectDb} from "./models/products.model.js";
 
 const app = express();
 

@@ -10,5 +10,48 @@ const connectDb = async ()=>{
     }
 }
 
-export default connectDb;
+const { Schema } = mongoose;
+
+const productSchema = new mongoose.Schema({
+    title: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    price: {
+        type: Number,
+        required: true,
+        min: 0
+    },
+    rating: {
+        type: Number,
+        required: true,
+        min: 0,
+        max: 5
+    },
+    description: {
+        type: String,
+        required: true,
+        trim: true
+    }
+});
+
+const Product = mongoose.model('Product',productSchema)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export  {connectDb, Product};
+
+
 
